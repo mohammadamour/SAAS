@@ -170,6 +170,12 @@ flowchart TD
 - **Interactive Competitor Recon Radar**: Clickable competitor chips (`probeCompetitor`) allowing visitors to immediately run reconnaissance on top rivals with 1 click.
 - **Inferred Tech Stack**: Technical architecture badges (frontend frameworks, backend microservices, analytics pipelines, edge CDNs). Built and verified clean production bundle in 1.55s.
 
+### 3.15 Master Viewport Assembly & Ambient Dynamic Auras (`App.vue`)
+- **File**: `frontend/src/App.vue`
+- **Component Orchestration**: Assembles `HeaderBar.vue`, `SearchConsole.vue`, and all 4 intelligence quadrants (`BrandCard`, `NetworkCard`, `VitalsCard`, `AiDossierCard`) into a cohesive 2x2 Bento grid on desktop and stacked column layout on mobile.
+- **Floating Ambient Auras**: Injects dual background blurred radial glow spheres (`.ambient-aura-primary`, `.ambient-aura-secondary`) that float behind the glass cards and dynamically adapt their color hues when the active company theme shifts.
+- **Clean Production Bundle**: Removed legacy Vite placeholder files (`HelloWorld.vue`), validated full production compilation (96.5 kB JS, 25.2 kB CSS).
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -206,7 +212,7 @@ flowchart TD
 - [x] **Step 3.3**: Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`).
 - [x] **Step 3.4**: Quadrant 3 — Performance & Core Vitals Radar (`VitalsCard.vue`).
 - [x] **Step 3.5**: Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`).
-- [ ] **Step 4.1**: Master Viewport Assembly & Ambient Aura Background (`App.vue`).
+- [x] **Step 4.1**: Master Viewport Assembly & Ambient Aura Background (`App.vue`).
 - [ ] **Step 4.2**: Interactive Gadgets & Telemetry Status Bar (`StatusBar.vue`).
 - [ ] **Step 4.3**: End-to-End Flight-Check & Docker Verification.
 - [ ] **Step 4.4**: Documentation Finalization & GitHub Push.
