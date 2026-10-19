@@ -141,6 +141,11 @@ flowchart TD
 - **State Properties**: `activeDomain`, `dossier`, `isLoading`, `error`, `cacheStats`, `presets`.
 - **Pre-seeded Corporate Presets**: Instant targets for **Spotify** (`#10B981`), **Stripe** (`#6366F1`), **Linear** (`#5E6AD2`), **Netflix** (`#E50914`), and **OpenAI** (`#10A37F`) allowing 1-click evaluation without typing. Built-in instant fallback payload ensures instantaneous initial paint.
 
+### 3.10 Navigation Header & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`)
+- **Files**: `frontend/src/components/HeaderBar.vue`, `frontend/src/components/SearchConsole.vue`
+- **HeaderBar**: Terminal brand badge (`v2.4-PROBE`), real-time UTC Zulu clock interval ticker, and live in-memory Redis telemetry status pill (`PULSE-DOT`, indexed entity counter).
+- **SearchConsole**: Cybernetic search form with domain input, Lucide icons, loading radar-sweep beam animation, error boundaries, and 1-click interactive corporate target chips (`Spotify`, `Stripe`, `Linear`, `Netflix`, `OpenAI`) with dynamic active glowing borders. Built and verified production bundle in 787ms.
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -172,7 +177,7 @@ flowchart TD
 - [x] **Step 1.5**: REST API Endpoint `/api/v1/intel/{domain}` & Automated Pytest Suite.
 - [x] **Step 2.1**: Cybernetic Chameleon CSS Design System (`tokens.css`).
 - [x] **Step 2.2**: Reactive Intel Store & Brand Preset Engine (`useIntelStore.js`).
-- [ ] **Step 3.1**: Top Navigation Bar & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`).
+- [x] **Step 3.1**: Top Navigation Bar & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`).
 - [ ] **Step 3.2**: Quadrant 1 — Brand Identity & Color Spectrum Card (`BrandCard.vue`).
 - [ ] **Step 3.3**: Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`).
 - [ ] **Step 3.4**: Quadrant 3 — Performance & Core Vitals Radar (`VitalsCard.vue`).
