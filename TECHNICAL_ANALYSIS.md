@@ -129,12 +129,11 @@ flowchart TD
   - `test_intel_endpoint.py`: Validates `/api/v1/intel/{domain}` cache-miss and cache-hit behavior, presets, and invalid domain handling.
 - **Pass Rate**: **10/10 tests passing (100%)** in 4.73s with zero warnings.
 
-### 3.7 REST API Endpoints & Gateway
-- **File**: `backend/app/api/v1/router.py` mounted at `/api/v1`
-- **Endpoints**:
-  - `GET /api/v1/intel/{domain}`: Core intelligence aggregator. Protected by `SlowAPI` (30 req/min). Returns `PrismDossierResponse` with sub-millisecond retrieval on cache hits.
-  - `GET /api/v1/cache/stats`: Telemetry stats for HUD status bar (total cached keys, memory usage, fallback state).
-  - `GET /api/v1/presets`: Returns curated corporate presets (Spotify, Stripe, Linear, Netflix, OpenAI) for 1-click exploration.
+### 3.8 Cybernetic Chameleon CSS Design System (`tokens.css`)
+- **Files**: `frontend/src/assets/styles/tokens.css`, `frontend/src/style.css`, `frontend/index.html`
+- **Dynamic Chameleon Theming**: Configured reactive CSS custom properties (`--brand-primary`, `--brand-primary-rgb`, `--brand-secondary`, `--brand-glow`, `--brand-surface`, `--brand-border`) that morph smoothly using a `0.8s cubic-bezier(0.16, 1, 0.3, 1)` easing curve.
+- **Glassmorphism & HUD Tokens**: Frosted card classes (`.prism-card`), subtle glowing borders, status pills (`.prism-pill`), glowing pulse dots, background dot grid (`32px` interval), and ambient blurred glow spheres.
+- **Typography Integration**: Linked Google Fonts (*Plus Jakarta Sans* for UI, *JetBrains Mono* for telemetry metrics). Built and verified clean production bundle.
 
 ---
 
@@ -165,7 +164,7 @@ flowchart TD
 - [x] **Step 1.3**: Multi-Stream Async Aggregation Service.
 - [x] **Step 1.4**: High-Speed Redis Caching & Rate-Limiting Layer.
 - [x] **Step 1.5**: REST API Endpoint `/api/v1/intel/{domain}` & Automated Pytest Suite.
-- [ ] **Step 2.1**: Cybernetic Chameleon CSS Design System (`tokens.css`).
+- [x] **Step 2.1**: Cybernetic Chameleon CSS Design System (`tokens.css`).
 - [ ] **Step 2.2**: Reactive Intel Store & Brand Preset Engine (`useIntelStore.js`).
 - [ ] **Step 3.1**: Top Navigation Bar & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`).
 - [ ] **Step 3.2**: Quadrant 1 — Brand Identity & Color Spectrum Card (`BrandCard.vue`).
