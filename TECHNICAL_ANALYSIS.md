@@ -163,6 +163,13 @@ flowchart TD
 - **Radial Score Rings**: Custom SVG radial dials for **Performance**, **Accessibility**, and **SEO Audit** computed using circular circumference offset math (`stroke-dashoffset`). Colors adapt dynamically based on Google threshold tiers (Emerald for 90+, Amber for 50-89, Crimson for <50).
 - **Core Web Vitals**: Metrics for First Contentful Paint (FCP in seconds) and Visual Speed Index with rating badges, backed by a persistent Google Core Web Vitals status banner. Built and verified clean production bundle in 464ms.
 
+### 3.14 Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`)
+- **File**: `frontend/src/components/AiDossierCard.vue`
+- **Unfiltered Reality Banner**: Stylized quote card with quotation iconography displaying the company's real-world business model without corporate marketing jargon.
+- **Moat vs Existential Vulnerability**: Dual tactical matrix cells comparing competitive moats (defensive distribution advantages) against existential threats (margin compression, platform dependencies).
+- **Interactive Competitor Recon Radar**: Clickable competitor chips (`probeCompetitor`) allowing visitors to immediately run reconnaissance on top rivals with 1 click.
+- **Inferred Tech Stack**: Technical architecture badges (frontend frameworks, backend microservices, analytics pipelines, edge CDNs). Built and verified clean production bundle in 1.55s.
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -198,7 +205,7 @@ flowchart TD
 - [x] **Step 3.2**: Quadrant 1 — Brand Identity & Color Spectrum Card (`BrandCard.vue`).
 - [x] **Step 3.3**: Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`).
 - [x] **Step 3.4**: Quadrant 3 — Performance & Core Vitals Radar (`VitalsCard.vue`).
-- [ ] **Step 3.5**: Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`).
+- [x] **Step 3.5**: Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`).
 - [ ] **Step 4.1**: Master Viewport Assembly & Ambient Aura Background (`App.vue`).
 - [ ] **Step 4.2**: Interactive Gadgets & Telemetry Status Bar (`StatusBar.vue`).
 - [ ] **Step 4.3**: End-to-End Flight-Check & Docker Verification.
