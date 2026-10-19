@@ -7,6 +7,7 @@ import BrandCard from './components/BrandCard.vue';
 import NetworkCard from './components/NetworkCard.vue';
 import VitalsCard from './components/VitalsCard.vue';
 import AiDossierCard from './components/AiDossierCard.vue';
+import StatusBar from './components/StatusBar.vue';
 
 const store = useIntelStore();
 
@@ -42,6 +43,9 @@ onMounted(() => {
       <!-- Quadrant 4: AI Strategic Teardown -->
       <AiDossierCard />
     </section>
+
+    <!-- Bottom Telemetry & Export Status Bar -->
+    <StatusBar />
   </main>
 </template>
 

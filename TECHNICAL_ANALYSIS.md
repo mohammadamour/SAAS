@@ -176,6 +176,11 @@ flowchart TD
 - **Floating Ambient Auras**: Injects dual background blurred radial glow spheres (`.ambient-aura-primary`, `.ambient-aura-secondary`) that float behind the glass cards and dynamically adapt their color hues when the active company theme shifts.
 - **Clean Production Bundle**: Removed legacy Vite placeholder files (`HelloWorld.vue`), validated full production compilation (96.5 kB JS, 25.2 kB CSS).
 
+### 3.16 Interactive Gadgets & Telemetry Status Bar (`StatusBar.vue`)
+- **File**: `frontend/src/components/StatusBar.vue`
+- **Redis Cache Telemetry Banner**: Dynamic status display indicating whether the active dossier was served from the high-speed Redis in-memory buffer (`0 LLM TOKENS BURNED`) or via fresh multi-stream live ingestion, including exact millisecond processing benchmarks.
+- **Export Executive Dossier (Markdown)**: 1-click clipboard exporter synthesizing the company's identity, cloud infrastructure, Lighthouse performance scores, and AI strategic teardown into a cleanly structured, production-grade Markdown report. Built and verified clean production bundle in 2.78s.
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -213,6 +218,6 @@ flowchart TD
 - [x] **Step 3.4**: Quadrant 3 — Performance & Core Vitals Radar (`VitalsCard.vue`).
 - [x] **Step 3.5**: Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`).
 - [x] **Step 4.1**: Master Viewport Assembly & Ambient Aura Background (`App.vue`).
-- [ ] **Step 4.2**: Interactive Gadgets & Telemetry Status Bar (`StatusBar.vue`).
+- [x] **Step 4.2**: Interactive Gadgets & Telemetry Status Bar (`StatusBar.vue`).
 - [ ] **Step 4.3**: End-to-End Flight-Check & Docker Verification.
 - [ ] **Step 4.4**: Documentation Finalization & GitHub Push.
