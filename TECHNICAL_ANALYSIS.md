@@ -181,6 +181,12 @@ flowchart TD
 - **Redis Cache Telemetry Banner**: Dynamic status display indicating whether the active dossier was served from the high-speed Redis in-memory buffer (`0 LLM TOKENS BURNED`) or via fresh multi-stream live ingestion, including exact millisecond processing benchmarks.
 - **Export Executive Dossier (Markdown)**: 1-click clipboard exporter synthesizing the company's identity, cloud infrastructure, Lighthouse performance scores, and AI strategic teardown into a cleanly structured, production-grade Markdown report. Built and verified clean production bundle in 2.78s.
 
+### 3.17 End-to-End Flight Check & Container Orchestration Verification
+- **Verification Suite**:
+  - **Backend Pytest Suite**: 10/10 tests passing across health checks, contract serialization, multi-stream ingestion, fallback resilience, and Redis cache telemetry (`pytest tests/ -v`).
+  - **Frontend Production Build**: Vite production compilation validated with 0 errors, transforming 1743 modules into optimized assets (99.76 kB JS, 26.64 kB CSS).
+  - **Docker Compose Configuration**: Modernized `docker-compose.yml` by removing deprecated top-level `version` tag; validated clean configuration with `docker compose config` with 0 warnings.
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -200,6 +206,9 @@ flowchart TD
 5. **Redis Offline Connection Latency Spike:**
    - *Problem*: When Redis is not running locally during tests, `aioredis` was attempting a fresh socket connection on every single request with a 2-second timeout, causing cache-hit response times to spike to ~2000ms.
    - *Solution*: Implemented a 15-second failure backoff (`REDIS_RETRY_COOLDOWN_SECONDS`) and reduced connection timeout to 300ms. Once a connection fails, the client uses the high-speed in-memory RAM fallback immediately, keeping response times under 1ms.
+6. **Docker Compose Obsolete Version Specifier:**
+   - *Problem*: Modern Docker Compose v2+ issues deprecation warnings when top-level `version: "3.8"` is declared.
+   - *Solution*: Removed `version` attribute from `docker-compose.yml`, conforming to current Docker Compose specification standards.
 
 ---
 
@@ -219,5 +228,5 @@ flowchart TD
 - [x] **Step 3.5**: Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`).
 - [x] **Step 4.1**: Master Viewport Assembly & Ambient Aura Background (`App.vue`).
 - [x] **Step 4.2**: Interactive Gadgets & Telemetry Status Bar (`StatusBar.vue`).
-- [ ] **Step 4.3**: End-to-End Flight-Check & Docker Verification.
+- [x] **Step 4.3**: End-to-End Flight-Check & Docker Verification.
 - [ ] **Step 4.4**: Documentation Finalization & GitHub Push.
