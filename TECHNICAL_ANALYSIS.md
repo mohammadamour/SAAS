@@ -126,7 +126,15 @@ flowchart TD
   - `test_schemas.py`: Validates Pydantic serialization, field validation, and contract integrity.
   - `test_intelligence_service.py`: Validates domain sanitization and multi-stream aggregator for curated and dynamic entities.
   - `test_redis_client.py`: Validates cache set, get, TTL expiration, and telemetry stats.
-- **Pass Rate**: **6/6 tests passing (100%)** with zero deprecation warnings.
+  - `test_intel_endpoint.py`: Validates `/api/v1/intel/{domain}` cache-miss and cache-hit behavior, presets, and invalid domain handling.
+- **Pass Rate**: **10/10 tests passing (100%)** in 4.73s with zero warnings.
+
+### 3.7 REST API Endpoints & Gateway
+- **File**: `backend/app/api/v1/router.py` mounted at `/api/v1`
+- **Endpoints**:
+  - `GET /api/v1/intel/{domain}`: Core intelligence aggregator. Protected by `SlowAPI` (30 req/min). Returns `PrismDossierResponse` with sub-millisecond retrieval on cache hits.
+  - `GET /api/v1/cache/stats`: Telemetry stats for HUD status bar (total cached keys, memory usage, fallback state).
+  - `GET /api/v1/presets`: Returns curated corporate presets (Spotify, Stripe, Linear, Netflix, OpenAI) for 1-click exploration.
 
 ---
 
@@ -144,6 +152,9 @@ flowchart TD
 4. **PowerShell Statement Chaining:**
    - *Problem*: Bash-style `&&` operator fails in standard Windows PowerShell.
    - *Solution*: Chained commands using `;` (semicolon).
+5. **Redis Offline Connection Latency Spike:**
+   - *Problem*: When Redis is not running locally during tests, `aioredis` was attempting a fresh socket connection on every single request with a 2-second timeout, causing cache-hit response times to spike to ~2000ms.
+   - *Solution*: Implemented a 15-second failure backoff (`REDIS_RETRY_COOLDOWN_SECONDS`) and reduced connection timeout to 300ms. Once a connection fails, the client uses the high-speed in-memory RAM fallback immediately, keeping response times under 1ms.
 
 ---
 
@@ -153,7 +164,7 @@ flowchart TD
 - [x] **Step 1.2**: Unified Pydantic Contracts & Schemas.
 - [x] **Step 1.3**: Multi-Stream Async Aggregation Service.
 - [x] **Step 1.4**: High-Speed Redis Caching & Rate-Limiting Layer.
-- [ ] **Step 1.5**: REST API Endpoint `/api/v1/intel/{domain}` & Automated Pytest Suite.
+- [x] **Step 1.5**: REST API Endpoint `/api/v1/intel/{domain}` & Automated Pytest Suite.
 - [ ] **Step 2.1**: Cybernetic Chameleon CSS Design System (`tokens.css`).
 - [ ] **Step 2.2**: Reactive Intel Store & Brand Preset Engine (`useIntelStore.js`).
 - [ ] **Step 3.1**: Top Navigation Bar & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`).

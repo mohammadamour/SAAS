@@ -5,28 +5,37 @@ import redis.asyncio as aioredis
 from app.core.config import settings
 
 redis_pool: Optional[aioredis.Redis] = None
+_last_redis_failure: float = 0.0
+REDIS_RETRY_COOLDOWN_SECONDS: float = 15.0
 
 # Resilient in-memory fallback buffer (stores {key: (payload, expire_timestamp)})
 _local_memory_cache: Dict[str, Tuple[dict, float]] = {}
 
 
 async def get_redis_client() -> Optional[aioredis.Redis]:
-    global redis_pool
-    if redis_pool is None:
-        try:
-            redis_pool = aioredis.from_url(
-                settings.redis_url,
-                encoding="utf-8",
-                decode_responses=True,
-                socket_connect_timeout=2,
-            )
-            # Test ping
-            await redis_pool.ping()
-        except Exception as e:
-            print(f"[Redis Warning] Could not connect to Redis at {settings.redis_url}: {e}")
-            redis_pool = None
-            return None
-    return redis_pool
+    global redis_pool, _last_redis_failure
+    if redis_pool is not None:
+        return redis_pool
+
+    # If recent connection failed, skip trying for cooldown period to prevent latency spikes
+    if time.time() - _last_redis_failure < REDIS_RETRY_COOLDOWN_SECONDS:
+        return None
+
+    try:
+        candidate_pool = aioredis.from_url(
+            settings.redis_url,
+            encoding="utf-8",
+            decode_responses=True,
+            socket_connect_timeout=0.3,
+        )
+        # Test ping
+        await candidate_pool.ping()
+        redis_pool = candidate_pool
+        return redis_pool
+    except Exception as e:
+        _last_redis_failure = time.time()
+        print(f"[Redis Warning] Could not connect to Redis at {settings.redis_url}: {e} (using embedded in-memory buffer)")
+        return None
 
 
 async def close_redis_client():
