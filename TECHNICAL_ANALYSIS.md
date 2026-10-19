@@ -158,6 +158,11 @@ flowchart TD
 - **Latency Speedometer**: Time-To-First-Byte (TTFB) latency counter with color-coded speed tier badges (`ULTRA-LOW LATENCY`, `OPTIMAL EDGE TTFB`, `MODERATE LATENCY`).
 - **IP & Security Protocol**: Direct copyable IPv4 address, negotiated TLS protocol (`TLSv1.3`), edge server header, and SSL certificate validity countdown progress bar calibrated to standard 90-day renewal cycles. Built and verified clean production bundle in 462ms.
 
+### 3.13 Quadrant 3 — Web Performance & Core Vitals Radar (`VitalsCard.vue`)
+- **File**: `frontend/src/components/VitalsCard.vue`
+- **Radial Score Rings**: Custom SVG radial dials for **Performance**, **Accessibility**, and **SEO Audit** computed using circular circumference offset math (`stroke-dashoffset`). Colors adapt dynamically based on Google threshold tiers (Emerald for 90+, Amber for 50-89, Crimson for <50).
+- **Core Web Vitals**: Metrics for First Contentful Paint (FCP in seconds) and Visual Speed Index with rating badges, backed by a persistent Google Core Web Vitals status banner. Built and verified clean production bundle in 464ms.
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -192,7 +197,7 @@ flowchart TD
 - [x] **Step 3.1**: Top Navigation Bar & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`).
 - [x] **Step 3.2**: Quadrant 1 — Brand Identity & Color Spectrum Card (`BrandCard.vue`).
 - [x] **Step 3.3**: Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`).
-- [ ] **Step 3.4**: Quadrant 3 — Performance & Core Vitals Radar (`VitalsCard.vue`).
+- [x] **Step 3.4**: Quadrant 3 — Performance & Core Vitals Radar (`VitalsCard.vue`).
 - [ ] **Step 3.5**: Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`).
 - [ ] **Step 4.1**: Master Viewport Assembly & Ambient Aura Background (`App.vue`).
 - [ ] **Step 4.2**: Interactive Gadgets & Telemetry Status Bar (`StatusBar.vue`).
