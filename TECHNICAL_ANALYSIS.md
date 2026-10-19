@@ -135,6 +135,12 @@ flowchart TD
 - **Glassmorphism & HUD Tokens**: Frosted card classes (`.prism-card`), subtle glowing borders, status pills (`.prism-pill`), glowing pulse dots, background dot grid (`32px` interval), and ambient blurred glow spheres.
 - **Typography Integration**: Linked Google Fonts (*Plus Jakarta Sans* for UI, *JetBrains Mono* for telemetry metrics). Built and verified clean production bundle.
 
+### 3.9 Reactive Intel Store & Preset Engine (`useIntelStore.js`)
+- **File**: `frontend/src/stores/useIntelStore.js`
+- **Chameleon Mutator**: `applyBrandTheme(primaryHex, secondaryHex)` dynamically derives RGB channels and sets `--brand-primary`, `--brand-primary-rgb`, etc. directly on `document.documentElement.style`, activating the 0.8s fluid transition.
+- **State Properties**: `activeDomain`, `dossier`, `isLoading`, `error`, `cacheStats`, `presets`.
+- **Pre-seeded Corporate Presets**: Instant targets for **Spotify** (`#10B981`), **Stripe** (`#6366F1`), **Linear** (`#5E6AD2`), **Netflix** (`#E50914`), and **OpenAI** (`#10A37F`) allowing 1-click evaluation without typing. Built-in instant fallback payload ensures instantaneous initial paint.
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -165,7 +171,7 @@ flowchart TD
 - [x] **Step 1.4**: High-Speed Redis Caching & Rate-Limiting Layer.
 - [x] **Step 1.5**: REST API Endpoint `/api/v1/intel/{domain}` & Automated Pytest Suite.
 - [x] **Step 2.1**: Cybernetic Chameleon CSS Design System (`tokens.css`).
-- [ ] **Step 2.2**: Reactive Intel Store & Brand Preset Engine (`useIntelStore.js`).
+- [x] **Step 2.2**: Reactive Intel Store & Brand Preset Engine (`useIntelStore.js`).
 - [ ] **Step 3.1**: Top Navigation Bar & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`).
 - [ ] **Step 3.2**: Quadrant 1 — Brand Identity & Color Spectrum Card (`BrandCard.vue`).
 - [ ] **Step 3.3**: Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`).
