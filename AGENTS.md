@@ -38,6 +38,11 @@ Welcome! You are working on **PRISM // OS** (Autonomous Corporate & Infrastructu
 - Maintain the obsidian glassmorphism aesthetic (`#05070A` void, frosted card surfaces, hairline translucent borders, ambient glowing backdrops).
 - Ensure smooth CSS transitions (`0.8s cubic-bezier(0.16, 1, 0.3, 1)`) when switching brand themes.
 
+### 📖 Rule 4: Continuous Technical Analysis Maintenance
+- **Keep `TECHNICAL_ANALYSIS.md` continuously updated**:
+  - After completing any feature, step, or pipeline change, expand `TECHNICAL_ANALYSIS.md` to document what was built, architectural decisions, and any discovered quirks.
+  - This file serves as the living technical memory and engineering backlog for the repository.
+
 ---
 
 ## 📁 Key File Locations
