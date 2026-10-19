@@ -152,6 +152,12 @@ flowchart TD
 - **Interactive Color Swatches**: Interactive primary and secondary color palette swatches with live click-to-copy hex functionality (`#10B981`, `#6366F1`, etc.) and temporary checkmark feedback.
 - **Verified Footprint**: Renders verified social network chips (Website, Twitter/X, GitHub, LinkedIn). Built and verified clean production bundle in 935ms.
 
+### 3.12 Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`)
+- **File**: `frontend/src/components/NetworkCard.vue`
+- **Infrastructure Lockup**: Detected cloud hosting provider hero badge (Cloudflare, AWS, GCP, Vercel, Fastly, Akamai) with ambient border glows.
+- **Latency Speedometer**: Time-To-First-Byte (TTFB) latency counter with color-coded speed tier badges (`ULTRA-LOW LATENCY`, `OPTIMAL EDGE TTFB`, `MODERATE LATENCY`).
+- **IP & Security Protocol**: Direct copyable IPv4 address, negotiated TLS protocol (`TLSv1.3`), edge server header, and SSL certificate validity countdown progress bar calibrated to standard 90-day renewal cycles. Built and verified clean production bundle in 462ms.
+
 ---
 
 ## 4. Discovered Quirks, Nuances & Solutions
@@ -185,7 +191,7 @@ flowchart TD
 - [x] **Step 2.2**: Reactive Intel Store & Brand Preset Engine (`useIntelStore.js`).
 - [x] **Step 3.1**: Top Navigation Bar & Command Search Console (`HeaderBar.vue`, `SearchConsole.vue`).
 - [x] **Step 3.2**: Quadrant 1 — Brand Identity & Color Spectrum Card (`BrandCard.vue`).
-- [ ] **Step 3.3**: Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`).
+- [x] **Step 3.3**: Quadrant 2 — Cloud & Edge Network Telemetry Card (`NetworkCard.vue`).
 - [ ] **Step 3.4**: Quadrant 3 — Performance & Core Vitals Radar (`VitalsCard.vue`).
 - [ ] **Step 3.5**: Quadrant 4 — AI Strategic Teardown & Competitor Radar (`AiDossierCard.vue`).
 - [ ] **Step 4.1**: Master Viewport Assembly & Ambient Aura Background (`App.vue`).
