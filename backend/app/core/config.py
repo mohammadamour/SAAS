@@ -3,10 +3,16 @@ from typing import Optional
 
 
 class Settings(BaseSettings):
-    APP_NAME: str = "PulseEngine API"
+    APP_NAME: str = "PRISM // OS Intelligence Engine"
     ENVIRONMENT: str = "development"
     DEBUG: bool = True
     API_V1_STR: str = "/api/v1"
+    
+    # External API Keys (Optional - Intelligent fallback providers used if unset)
+    GROQ_API_KEY: Optional[str] = None
+    GEMINI_API_KEY: Optional[str] = None
+    PAGESPEED_API_KEY: Optional[str] = None
+    REQUEST_TIMEOUT_SECONDS: float = 8.0
     
     # Redis configuration
     REDIS_HOST: str = "localhost"
